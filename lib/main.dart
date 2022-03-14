@@ -68,7 +68,7 @@ import 'time_picker/time_picker.dart';
 import 'unique_identifier_generator/unique_identifier_generator.dart';
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = 36;
+  int myCase = -23;
 
   Widget? myWidget;
   switch (myCase) {
@@ -99,6 +99,7 @@ Future<void> main() async {
     case -20:
       myWidget = const MaterialApp(
         home: MyWrapWidget(),
+        debugShowCheckedModeBanner: false,
       );
       break;
 
@@ -111,6 +112,7 @@ Future<void> main() async {
     case -18:
       myWidget = const MaterialApp(
         home: NestedListViewsAndColumns(),
+        debugShowCheckedModeBanner: false,
       );
       break;
 
