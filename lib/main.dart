@@ -1,19 +1,25 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:minitutorials/adaptive_widgets/adaptive_widgets.dart';
 import 'package:minitutorials/add_packages/add_packages.dart';
 import 'package:minitutorials/animated_circular_FAB_menu/animated_circular_FAB_menu.dart';
+import 'package:minitutorials/app_bar/app_bar.dart';
 import 'package:minitutorials/appbar_transparent/appbar_transparent.dart';
 import 'package:minitutorials/bottom_sheet/bottom_sheet.dart';
 import 'package:minitutorials/button_with_image_and_text/button_with_image_and_text.dart';
 import 'package:minitutorials/call_setstate_in_popup_alert_dialog/call_setstate_in_popup_alert_dialog.dart';
 import 'package:minitutorials/checkbox_listtile/checkbox_listtile.dart';
+import 'package:minitutorials/collection_if_for/collection_if_for.dart';
 import 'package:minitutorials/create_popup_dialog_with_textfield/create_popup_dialog_with_textfield.dart';
 import 'package:minitutorials/date_picker/date_picker.dart';
 import 'package:minitutorials/date_range_picker/date_range_picker.dart';
 import 'package:minitutorials/drag_and_drop/drag_and_drop.dart';
+import 'package:minitutorials/dropdown_menu/dropdown_menu.dart';
 import 'package:minitutorials/dropdown_menu_item_list/dropdown_menu_item_list.dart';
 import 'package:minitutorials/enable_disable_button/enable_disable_button.dart';
 import 'package:minitutorials/expand_collapse_widget/expand_collapse_widget.dart';
+import 'package:minitutorials/expanded_vc_flexible/expanded_vc_flexible.dart';
 import 'package:minitutorials/expansion_panel/expansion_panel.dart';
 import 'package:minitutorials/expansion_tile_and_listtile/expansion_tile_and_listtile.dart';
 import 'package:minitutorials/fix_row_overflow_wrap_scroll/fix_row_overflow_wrap_scroll.dart';
@@ -30,7 +36,10 @@ import 'package:minitutorials/markdown_widget/markdown_widget.dart';
 import 'package:minitutorials/mask_any_image/mask_any_image.dart';
 import 'package:minitutorials/mask_text_with_image/mask_text_with_image.dart';
 import 'package:minitutorials/multi_language_app/multi_language_app.dart';
+import 'package:minitutorials/my_media_query/my_media_query.dart';
 import 'package:minitutorials/my_preserve_scroll_position/my_preserve_scroll_position.dart';
+import 'package:minitutorials/my_single_child_scroll_view/my_single_child_scroll_view.dart';
+import 'package:minitutorials/my_webview/my_webview.dart';
 import 'package:minitutorials/native_splash_screen/native_splash_screen.dart';
 import 'package:minitutorials/navigation_bar/navigation_bar.dart';
 import 'package:minitutorials/navigation_drawer/navigation_drawer.dart';
@@ -40,12 +49,15 @@ import 'package:minitutorials/null_safety/null_safety.dart';
 import 'package:minitutorials/onboarding_screen_UI/HomePage.dart';
 import 'package:minitutorials/onboarding_screen_UI/onboarding_screen_UI.dart';
 import 'package:minitutorials/page_route_transition/page_route_transition.dart';
+import 'package:minitutorials/reorderable_listview/reorderable_listview.dart';
 import 'package:minitutorials/screen_mirror_phone/screen_mirror_phone.dart';
 import 'package:minitutorials/search_and_filter_listview/search_and_filter_listview.dart';
 import 'package:minitutorials/search_bar_field_in_appbar/search_bar_field_in_appbar.dart';
 import 'package:minitutorials/simple_photo_gallery_app/simple_photo_gallery_app.dart';
+import 'package:minitutorials/sliver_appbar/sliver_appbar.dart';
 import 'package:minitutorials/sort_listview_alphabetically/sort_listview_alphabetically.dart';
 import 'package:minitutorials/spacer_widget/spacer_widget.dart';
+import 'package:minitutorials/spread_operator/spread_operator.dart';
 import 'package:minitutorials/stepper_widget/stepper_widget.dart';
 import 'package:minitutorials/validate_forms/validate_forms.dart';
 import 'package:minitutorials/wrap_widget/wrap_widget.dart';
@@ -66,15 +78,103 @@ import 'tabbed_appbar/tabbed_appbar.dart';
 import 'tablet_widget/tablet_widget.dart';
 import 'time_picker/time_picker.dart';
 import 'unique_identifier_generator/unique_identifier_generator.dart';
+
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -23;
+  int myCase = -30;
 
   Widget? myWidget;
   switch (myCase) {
-    case -24:
+    case -35:
       myWidget = const MaterialApp(
+        home: MyMediaQuery(),
+      );
+      break;
+
+    case -34:
+      myWidget = const MaterialApp(
+        home: ExpandedVsFlexible(),
+      );
+      break;
+
+    case -33:
+      myWidget = const MaterialApp(
+        home: MySpreadOperator(),
+      );
+      break;
+
+    case -32:
+      myWidget = const MaterialApp(
+        home: CollectionIfFor(),
+      );
+      break;
+
+    case -31:
+      myWidget = const MaterialApp(
+        home: MyAdaptiveWidgets(),
+      );
+      break;
+
+    case -30:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MySingleChildScrollView(),
+      );
+      break;
+
+    case -29:
+      myWidget = const MaterialApp(
+        home: MyWebView(),
+      );
+      break;
+
+    case -28:
+      myWidget = const MaterialApp(
+        home: MyReorderableListView(),
+      );
+      break;
+
+    case -27:
+      myWidget = const MaterialApp(
+        home: MySliverAppBar(),
+      );
+      break;
+
+    case -26:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyDropDownMenu(),
+      );
+      break;
+
+    case -25:
+      myWidget = const MaterialApp(
+        home: MyAppBar(),
+      );
+      break;
+
+    case -24:
+      myWidget = MaterialApp(
+        themeMode: ThemeMode.light,//set either dark or light
+        darkTheme: ThemeData(
+          colorSchemeSeed: Colors.blue,
+          brightness: Brightness.dark,
+          useMaterial3: true,
+          // textButtonTheme: TextButtonThemeData()
+        ),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.red,
+            brightness: Brightness.light,
+
+            //override specific colors
+            // primary: Colors.blue,
+            secondary: Colors.green,
+
+          ),
+        ),
         home: NewMaterial3ColorScheme(),
+
       );
       break;
 
@@ -163,7 +263,7 @@ Future<void> main() async {
       WidgetsFlutterBinding.ensureInitialized();
       final prefs = await SharedPreferences.getInstance();
       final bool showHome = prefs.getBool('showHome') ?? false;
-       myWidget =  MaterialApp(
+      myWidget = MaterialApp(
         home: showHome ? HomePage() : MyOnBoardingScreenUI(),
       );
       break;
@@ -472,7 +572,7 @@ class _TemplateState extends State<Template> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('App)')),
-      body: Container(),
+      body: Center(),
     );
   }
 }

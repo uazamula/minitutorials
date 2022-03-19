@@ -48,6 +48,7 @@ dependencies:
   page_transition: ^2.0.5
   expandable: ^5.0.1
   widget_mask: ^1.0.0
+  webview_flutter: ^3.0.1
 
 # Run commands in your terminal to generate splash screen
 # 1) flutter clean
