@@ -81,18 +81,20 @@ import 'unique_identifier_generator/unique_identifier_generator.dart';
 
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -30;
+  int myCase = -35;
 
   Widget? myWidget;
   switch (myCase) {
     case -35:
       myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: MyMediaQuery(),
       );
       break;
 
     case -34:
       myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: ExpandedVsFlexible(),
       );
       break;

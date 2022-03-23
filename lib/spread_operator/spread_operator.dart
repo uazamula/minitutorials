@@ -8,11 +8,20 @@ class MySpreadOperator extends StatefulWidget {
 }
 
 class _MySpreadOperatorState extends State<MySpreadOperator> {
+  final items = [Text('Item2'),Text('Item3'),];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('MySpreadOperator)')),
-      body: Center(),
+      body: Center(child: ListView(
+        padding: EdgeInsets.all(12),
+        children: [
+          Text('Item1'),
+          ...items,
+          Text('Item4'),
+          Column(children: items,)
+        ],
+      ),),
     );
   }
 }
