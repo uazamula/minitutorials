@@ -49,6 +49,7 @@ dependencies:
   expandable: ^5.0.1
   widget_mask: ^1.0.0
   webview_flutter: ^3.0.1
+  grouped_list: ^4.2.0
 
 # Run commands in your terminal to generate splash screen
 # 1) flutter clean

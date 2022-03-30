@@ -9,8 +9,10 @@ import 'package:minitutorials/appbar_transparent/appbar_transparent.dart';
 import 'package:minitutorials/bottom_sheet/bottom_sheet.dart';
 import 'package:minitutorials/button_with_image_and_text/button_with_image_and_text.dart';
 import 'package:minitutorials/call_setstate_in_popup_alert_dialog/call_setstate_in_popup_alert_dialog.dart';
+import 'package:minitutorials/chat_app_ui/chat_app_ui.dart';
 import 'package:minitutorials/checkbox_listtile/checkbox_listtile.dart';
 import 'package:minitutorials/collection_if_for/collection_if_for.dart';
+import 'package:minitutorials/constrained_box/constrained_box.dart';
 import 'package:minitutorials/create_popup_dialog_with_textfield/create_popup_dialog_with_textfield.dart';
 import 'package:minitutorials/date_picker/date_picker.dart';
 import 'package:minitutorials/date_range_picker/date_range_picker.dart';
@@ -24,6 +26,7 @@ import 'package:minitutorials/expansion_panel/expansion_panel.dart';
 import 'package:minitutorials/expansion_tile_and_listtile/expansion_tile_and_listtile.dart';
 import 'package:minitutorials/fix_row_overflow_wrap_scroll/fix_row_overflow_wrap_scroll.dart';
 import 'package:minitutorials/format_date_time_time_ago_locales/format_date_time_time_ago_locales.dart';
+import 'package:minitutorials/fractionally_sizedbox/fractionally_sizedbox.dart';
 import 'package:minitutorials/gesture_detector_and_inkwell/gesture_detector_and_inkwell.dart';
 import 'package:minitutorials/hero_widget/hero_widget.dart';
 import 'package:minitutorials/how_auto_complete_textfield/how_auto_complete_textfield.dart';
@@ -31,7 +34,9 @@ import 'package:minitutorials/how_to_add_favicon/how_to_add_favicon.dart';
 import 'package:minitutorials/how_to_fix_bottom_overflowed/how_to_fix_bottom_overflowed.dart';
 import 'package:minitutorials/how_to_use_flow_widget/how_to_use_flow_widget.dart';
 import 'package:minitutorials/intrinsic_height_and_width_widgets/intrinsic_hww.dart';
+import 'package:minitutorials/layout_builder_rd/layout_builder_rd.dart';
 import 'package:minitutorials/listview_VC_gridview/listview_VC_gridview.dart';
+import 'package:minitutorials/listview_sticky_header/listview_sticky_header.dart';
 import 'package:minitutorials/markdown_widget/markdown_widget.dart';
 import 'package:minitutorials/mask_any_image/mask_any_image.dart';
 import 'package:minitutorials/mask_text_with_image/mask_text_with_image.dart';
@@ -48,12 +53,14 @@ import 'package:minitutorials/new_material_3color_scheme/new_material_3color_sch
 import 'package:minitutorials/null_safety/null_safety.dart';
 import 'package:minitutorials/onboarding_screen_UI/HomePage.dart';
 import 'package:minitutorials/onboarding_screen_UI/onboarding_screen_UI.dart';
+import 'package:minitutorials/orientation_and_mediaquery/orientation_and_mediaquery.dart';
 import 'package:minitutorials/page_route_transition/page_route_transition.dart';
 import 'package:minitutorials/reorderable_listview/reorderable_listview.dart';
 import 'package:minitutorials/screen_mirror_phone/screen_mirror_phone.dart';
 import 'package:minitutorials/search_and_filter_listview/search_and_filter_listview.dart';
 import 'package:minitutorials/search_bar_field_in_appbar/search_bar_field_in_appbar.dart';
 import 'package:minitutorials/simple_photo_gallery_app/simple_photo_gallery_app.dart';
+import 'package:minitutorials/sizedbox2/sizedbox2.dart';
 import 'package:minitutorials/sliver_appbar/sliver_appbar.dart';
 import 'package:minitutorials/sort_listview_alphabetically/sort_listview_alphabetically.dart';
 import 'package:minitutorials/spacer_widget/spacer_widget.dart';
@@ -81,10 +88,60 @@ import 'unique_identifier_generator/unique_identifier_generator.dart';
 
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -35;
+  int myCase = -40;
 
   Widget? myWidget;
   switch (myCase) {
+    case -42:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyConstrainedBox(),
+      );
+      break;
+
+    case -41:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ChatAppUI(),
+      );
+      break;
+
+    case -40:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ListViewStickyHeader(),
+      );
+      break;
+
+    case -39:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyFractionallySizedBox(),
+      );
+      break;
+
+    case -38:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SizedBox2(),
+      );
+      break;
+
+    case -37:
+    myWidget = const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyLayoutBuilderRD(),
+    );
+    break;
+
+    case -36:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: OrientationAndMediaQuery(),
+      );
+      break;
+
+
     case -35:
       myWidget = const MaterialApp(
         debugShowCheckedModeBanner: false,
