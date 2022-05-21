@@ -94,7 +94,7 @@ import 'unique_identifier_generator/unique_identifier_generator.dart';
 
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -46;
+  int myCase = -47;
 
   Widget? myWidget;
   switch (myCase) {
@@ -264,22 +264,22 @@ Future<void> main() async {
       myWidget = MaterialApp(
         themeMode: ThemeMode.light,//set either dark or light
         darkTheme: ThemeData(
-          colorSchemeSeed: Colors.blue,
+          //colorSchemeSeed: Colors.blue,
           brightness: Brightness.dark,
-          useMaterial3: true,
+          // useMaterial3: true,
           // textButtonTheme: TextButtonThemeData()
         ),
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.red,
-            brightness: Brightness.light,
-
-            //override specific colors
-            // primary: Colors.blue,
-            secondary: Colors.green,
-
-          ),
-        ),
+        // theme: ThemeData(
+        //   colorScheme: ColorScheme.fromSeed(
+        //     seedColor: Colors.red,
+        //     brightness: Brightness.light,
+        //
+        //     //override specific colors
+        //     // primary: Colors.blue,
+        //     secondary: Colors.green,
+        //
+        //   ),
+        // ),
         home: NewMaterial3ColorScheme(),
 
       );

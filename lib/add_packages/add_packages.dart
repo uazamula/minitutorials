@@ -12,7 +12,16 @@ class _MyAddPackagesState extends State<MyAddPackages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('MyAddPackages)')),
-      body: Container(),
+      body: Column(children: [
+        Container(
+          height: 150,
+          color: Colors.red,
+          child: Center(child: Text('Some Widgets'),),
+        ),
+        ListView.builder(itemCount: 3,itemBuilder: (context,index)=>ListTile(
+          
+        ))
+      ],),
     );
   }
 }
