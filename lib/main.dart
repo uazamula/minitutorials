@@ -6,9 +6,11 @@ import 'package:minitutorials/add_packages/add_packages.dart';
 import 'package:minitutorials/animated_circular_FAB_menu/animated_circular_FAB_menu.dart';
 import 'package:minitutorials/app_bar/app_bar.dart';
 import 'package:minitutorials/appbar_transparent/appbar_transparent.dart';
+import 'package:minitutorials/biggest_flutter_lie/biggest_flutter_lie.dart';
 import 'package:minitutorials/bottom_sheet/bottom_sheet.dart';
 import 'package:minitutorials/button_with_image_and_text/button_with_image_and_text.dart';
 import 'package:minitutorials/call_setstate_in_popup_alert_dialog/call_setstate_in_popup_alert_dialog.dart';
+import 'package:minitutorials/cascade_operator/cascade_operator.dart';
 import 'package:minitutorials/chat_app_ui/chat_app_ui.dart';
 import 'package:minitutorials/checkbox_listtile/checkbox_listtile.dart';
 import 'package:minitutorials/clip_path_bezier/clip_path_bezier.dart';
@@ -18,6 +20,7 @@ import 'package:minitutorials/create_popup_dialog_with_textfield/create_popup_di
 import 'package:minitutorials/date_picker/date_picker.dart';
 import 'package:minitutorials/date_range_picker/date_range_picker.dart';
 import 'package:minitutorials/drag_and_drop/drag_and_drop.dart';
+import 'package:minitutorials/drag_n_drop_stack/drag_n_drop_stack.dart';
 import 'package:minitutorials/dropdown_menu/dropdown_menu.dart';
 import 'package:minitutorials/dropdown_menu_item_list/dropdown_menu_item_list.dart';
 import 'package:minitutorials/enable_disable_button/enable_disable_button.dart';
@@ -44,10 +47,12 @@ import 'package:minitutorials/markdown_widget/markdown_widget.dart';
 import 'package:minitutorials/mask_any_image/mask_any_image.dart';
 import 'package:minitutorials/mask_text_with_image/mask_text_with_image.dart';
 import 'package:minitutorials/multi_language_app/multi_language_app.dart';
+import 'package:minitutorials/my_liquid_swipe/my_liquid_swipe.dart';
 import 'package:minitutorials/my_media_query/my_media_query.dart';
 import 'package:minitutorials/my_preserve_scroll_position/my_preserve_scroll_position.dart';
 import 'package:minitutorials/my_single_child_scroll_view/my_single_child_scroll_view.dart';
 import 'package:minitutorials/my_webview/my_webview.dart';
+import 'package:minitutorials/my_youtube_player/my_youtube_player.dart';
 import 'package:minitutorials/native_splash_screen/native_splash_screen.dart';
 import 'package:minitutorials/navigation_bar/navigation_bar.dart';
 import 'package:minitutorials/navigation_drawer/navigation_drawer.dart';
@@ -55,6 +60,7 @@ import 'package:minitutorials/nested_listviews_and_columns/nested_listviews_and_
 import 'package:minitutorials/new_material_3color_scheme/new_material_3color_scheme.dart';
 import 'package:minitutorials/null_aware/null_aware.dart';
 import 'package:minitutorials/null_safety/null_safety.dart';
+import 'package:minitutorials/null_safety_late/null_safety_late.dart';
 import 'package:minitutorials/onboarding_screen_UI/HomePage.dart';
 import 'package:minitutorials/onboarding_screen_UI/onboarding_screen_UI.dart';
 import 'package:minitutorials/orientation_and_mediaquery/orientation_and_mediaquery.dart';
@@ -94,10 +100,53 @@ import 'unique_identifier_generator/unique_identifier_generator.dart';
 
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -47;
+  int myCase = -52;
 
   Widget? myWidget;
   switch (myCase) {
+    // case -55:
+    //   myWidget = const MaterialApp(
+    //     debugShowCheckedModeBanner: false,
+    //     home: ClipPathBezier(),
+    //   );
+    //   break;
+    case -54:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: CascadeOperator(),
+      );
+      break;
+    case -53:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyYoutubePlayer(),
+      );
+      break;
+    case -52:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: BiggestFlutterLie(),
+      );
+      break;
+    case -51:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: DragNDropStack(),
+      );
+      break;
+    case -50:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyLiquidSwipe(),
+      );
+      break;
+    case -49:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: NullSafetyLate(),
+      );
+      break;
+
     case -48:
       myWidget = const MaterialApp(
         debugShowCheckedModeBanner: false,

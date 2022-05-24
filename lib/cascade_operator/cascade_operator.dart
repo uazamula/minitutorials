@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MyPageView extends StatefulWidget {
-  const MyPageView({Key? key}) : super(key: key);
+class CascadeOperator extends StatefulWidget {
+  const CascadeOperator({Key? key}) : super(key: key);
 
   @override
-  _TemplateState createState() => _TemplateState();
+  _CascadeOperatorState createState() => _CascadeOperatorState();
 }
 
-class _TemplateState extends State<MyPageView> {
-  final controller = PageController(initialPage: 1);
+class _CascadeOperatorState extends State<CascadeOperator> {
+  final controller = PageController(initialPage: 0);
 
   @override
   void dispose() {
@@ -20,13 +20,13 @@ class _TemplateState extends State<MyPageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Page View)'),
+        title: const Text('CascadeOperator)'),
         actions: [
           IconButton(
               onPressed: () => controller.previousPage(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeInOut,
-                  ),
+                duration: Duration(seconds: 1),
+                curve: Curves.easeInOut,
+              ),
               icon: Icon(Icons.arrow_left)),
           IconButton(
               onPressed: () => controller.nextPage(
@@ -39,22 +39,10 @@ class _TemplateState extends State<MyPageView> {
       body: PageView(
         // physics: NeverScrollableScrollPhysics(),
         controller: controller,
-        scrollDirection: Axis.vertical,
-        onPageChanged: (index) {
-          print('Page${index + 1}');
-        },
         children: [
           Container(
             color: Colors.red,
             child: Text('Page 1'),
-          ),
-          Container(
-            color: Colors.black12,
-            child: Text('Page 2'),
-          ),
-          Container(
-            color: Colors.black38,
-            child: Text('Page 3'),
           ),
         ],
       ),
