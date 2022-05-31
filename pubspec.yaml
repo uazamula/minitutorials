@@ -52,6 +52,8 @@ dependencies:
   grouped_list: ^4.2.0
   http: ^0.13.4
   liquid_swipe: ^2.1.1
+  flutter_platform_widgets: ^1.20.0
+  youtube_player_flutter: ^8.1.0
 
 # Run commands in your terminal to generate splash screen
 # 1) flutter clean

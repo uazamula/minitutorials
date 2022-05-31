@@ -24,15 +24,15 @@ class _CascadeOperatorState extends State<CascadeOperator> {
         actions: [
           IconButton(
               onPressed: () => controller.previousPage(
-                duration: Duration(seconds: 1),
-                curve: Curves.easeInOut,
-              ),
+                    duration: Duration(seconds: 1),
+                    curve: Curves.easeInOut,
+                  ),
               icon: Icon(Icons.arrow_left)),
           IconButton(
               onPressed: () => controller.nextPage(
-                duration: Duration(seconds: 1),
-                curve: Curves.easeInOut,
-              ),
+                    duration: Duration(seconds: 1),
+                    curve: Curves.easeInOut,
+                  ),
               icon: Icon(Icons.arrow_right)),
         ],
       ),
@@ -40,12 +40,36 @@ class _CascadeOperatorState extends State<CascadeOperator> {
         // physics: NeverScrollableScrollPhysics(),
         controller: controller,
         children: [
-          Container(
-            color: Colors.red,
-            child: Text('Page 1'),
+          Center(
+            child: CustomPaint(
+              painter: RectanglePainter(),
+              child: SizedBox(
+                width: 250,
+                height: 200,
+              ),
+            ),
           ),
         ],
       ),
     );
+  }
+}
+
+class RectanglePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Rect.fromPoints(Offset.zero, Offset(size.width, size.height));
+    canvas.drawRect(
+        rect,
+        Paint()
+          ..color = Colors.blue
+          ..strokeWidth = 10
+          ..style = PaintingStyle.stroke);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    // TODO: implement shouldRepaint
+    return false;
   }
 }

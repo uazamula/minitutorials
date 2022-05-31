@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:minitutorials/adaptive_widgets/adaptive_widgets.dart';
 import 'package:minitutorials/add_packages/add_packages.dart';
 import 'package:minitutorials/animated_circular_FAB_menu/animated_circular_FAB_menu.dart';
@@ -100,7 +101,7 @@ import 'unique_identifier_generator/unique_identifier_generator.dart';
 
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -52;
+  int myCase = -54;
 
   Widget? myWidget;
   switch (myCase) {
@@ -123,8 +124,18 @@ Future<void> main() async {
       );
       break;
     case -52:
-      myWidget = const MaterialApp(
+      myWidget =  PlatformApp(
         debugShowCheckedModeBanner: false,
+        material: (_, __)=>MaterialAppData(
+          theme: ThemeData(
+            colorSchemeSeed: Colors.blue,
+          )
+        ),
+        cupertino: (_,__)=>CupertinoAppData(
+          theme: CupertinoThemeData(
+            primaryColor: Colors.blue,
+          )
+        ),
         home: BiggestFlutterLie(),
       );
       break;
