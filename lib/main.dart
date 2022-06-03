@@ -20,6 +20,7 @@ import 'package:minitutorials/constrained_box/constrained_box.dart';
 import 'package:minitutorials/create_popup_dialog_with_textfield/create_popup_dialog_with_textfield.dart';
 import 'package:minitutorials/date_picker/date_picker.dart';
 import 'package:minitutorials/date_range_picker/date_range_picker.dart';
+import 'package:minitutorials/download_from_firebase/download_from_firebase.dart';
 import 'package:minitutorials/drag_and_drop/drag_and_drop.dart';
 import 'package:minitutorials/drag_n_drop_stack/drag_n_drop_stack.dart';
 import 'package:minitutorials/dropdown_menu/dropdown_menu.dart';
@@ -34,6 +35,7 @@ import 'package:minitutorials/format_date_time_time_ago_locales/format_date_time
 import 'package:minitutorials/fractionally_sizedbox/fractionally_sizedbox.dart';
 import 'package:minitutorials/gesture_detector_and_inkwell/gesture_detector_and_inkwell.dart';
 import 'package:minitutorials/hero_widget/hero_widget.dart';
+import 'package:minitutorials/horizontal_listview/horizontal_listview.dart';
 import 'package:minitutorials/how_auto_complete_textfield/how_auto_complete_textfield.dart';
 import 'package:minitutorials/how_to_add_favicon/how_to_add_favicon.dart';
 import 'package:minitutorials/how_to_fix_bottom_overflowed/how_to_fix_bottom_overflowed.dart';
@@ -44,12 +46,16 @@ import 'package:minitutorials/layout_builder_rd/layout_builder_rd.dart';
 import 'package:minitutorials/limited_box/limited_box.dart';
 import 'package:minitutorials/listview_VC_gridview/listview_VC_gridview.dart';
 import 'package:minitutorials/listview_sticky_header/listview_sticky_header.dart';
+import 'package:minitutorials/listview_with_navigator/listview_with_navigator.dart';
 import 'package:minitutorials/markdown_widget/markdown_widget.dart';
 import 'package:minitutorials/mask_any_image/mask_any_image.dart';
 import 'package:minitutorials/mask_text_with_image/mask_text_with_image.dart';
 import 'package:minitutorials/multi_language_app/multi_language_app.dart';
+import 'package:minitutorials/my_futurebuilder/my_futurebuilder.dart';
+import 'package:minitutorials/my_google_translate/my_google_translate.dart';
 import 'package:minitutorials/my_liquid_swipe/my_liquid_swipe.dart';
 import 'package:minitutorials/my_media_query/my_media_query.dart';
+import 'package:minitutorials/my_neumorphism_button/my_neumorphism_button.dart';
 import 'package:minitutorials/my_preserve_scroll_position/my_preserve_scroll_position.dart';
 import 'package:minitutorials/my_single_child_scroll_view/my_single_child_scroll_view.dart';
 import 'package:minitutorials/my_webview/my_webview.dart';
@@ -68,6 +74,7 @@ import 'package:minitutorials/orientation_and_mediaquery/orientation_and_mediaqu
 import 'package:minitutorials/page_route_transition/page_route_transition.dart';
 import 'package:minitutorials/pull_to_refresh_listview/pull_to_refresh_listview.dart';
 import 'package:minitutorials/reorderable_listview/reorderable_listview.dart';
+import 'package:minitutorials/save_image_to_gallery/save_image_to_gallery.dart';
 import 'package:minitutorials/screen_mirror_phone/screen_mirror_phone.dart';
 import 'package:minitutorials/search_and_filter_listview/search_and_filter_listview.dart';
 import 'package:minitutorials/search_bar_field_in_appbar/search_bar_field_in_appbar.dart';
@@ -79,7 +86,11 @@ import 'package:minitutorials/sort_listview_alphabetically/sort_listview_alphabe
 import 'package:minitutorials/spacer_widget/spacer_widget.dart';
 import 'package:minitutorials/spread_operator/spread_operator.dart';
 import 'package:minitutorials/stepper_widget/stepper_widget.dart';
+import 'package:minitutorials/sticky_header_in_listview/sticky_header_in_listview.dart';
+import 'package:minitutorials/top_10_widgets/top_10_widgets.dart';
+import 'package:minitutorials/upload_to_firebase/upload_to_firebase.dart';
 import 'package:minitutorials/validate_forms/validate_forms.dart';
+import 'package:minitutorials/vertical_listview/vertical_listview.dart';
 import 'package:minitutorials/wrap_widget/wrap_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -101,16 +112,76 @@ import 'unique_identifier_generator/unique_identifier_generator.dart';
 
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -54;
+  int myCase = -55;
 
   Widget? myWidget;
   switch (myCase) {
-    // case -55:
-    //   myWidget = const MaterialApp(
-    //     debugShowCheckedModeBanner: false,
-    //     home: ClipPathBezier(),
-    //   );
-    //   break;
+    case -65:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ListViewWithNavigator(),
+      );
+      break;
+    case -64:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: VerticalListView(),
+      );
+      break;
+    case -63:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HorizontalListView(),
+      );
+      break;
+    case -62:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyFutureBuilder(),
+      );
+      break;
+    case -61:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: DownloadFromFirebase(),
+      );
+      break;
+    case -60:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SaveImageToGallery(),
+      );
+      break;
+    case -59:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: UploadToFirebase(),
+      );
+      break;
+    case -58:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Top10Widgets(),
+      );
+      break;
+    case -57:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyNewMorphismButton(),
+      );
+      break;
+    case -56:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: StickyHeaderInListView(),
+      );
+      break;
+    case -55:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyGoogleTranslate(),
+      );
+      break;
     case -54:
       myWidget = const MaterialApp(
         debugShowCheckedModeBanner: false,
