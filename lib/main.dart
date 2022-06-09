@@ -30,10 +30,12 @@ import 'package:minitutorials/expand_collapse_widget/expand_collapse_widget.dart
 import 'package:minitutorials/expanded_vc_flexible/expanded_vc_flexible.dart';
 import 'package:minitutorials/expansion_panel/expansion_panel.dart';
 import 'package:minitutorials/expansion_tile_and_listtile/expansion_tile_and_listtile.dart';
+import 'package:minitutorials/firebaseCRUD/firebaseCRUD.dart';
 import 'package:minitutorials/fix_row_overflow_wrap_scroll/fix_row_overflow_wrap_scroll.dart';
 import 'package:minitutorials/format_date_time_time_ago_locales/format_date_time_time_ago_locales.dart';
 import 'package:minitutorials/fractionally_sizedbox/fractionally_sizedbox.dart';
 import 'package:minitutorials/gesture_detector_and_inkwell/gesture_detector_and_inkwell.dart';
+import 'package:minitutorials/global_keys/global_keys.dart';
 import 'package:minitutorials/hero_widget/hero_widget.dart';
 import 'package:minitutorials/horizontal_listview/horizontal_listview.dart';
 import 'package:minitutorials/how_auto_complete_textfield/how_auto_complete_textfield.dart';
@@ -45,12 +47,16 @@ import 'package:minitutorials/intrinsic_height_and_width_widgets/intrinsic_hww.d
 import 'package:minitutorials/layout_builder_rd/layout_builder_rd.dart';
 import 'package:minitutorials/limited_box/limited_box.dart';
 import 'package:minitutorials/listview_VC_gridview/listview_VC_gridview.dart';
+import 'package:minitutorials/listview_json/listview_json.dart';
 import 'package:minitutorials/listview_sticky_header/listview_sticky_header.dart';
 import 'package:minitutorials/listview_with_navigator/listview_with_navigator.dart';
 import 'package:minitutorials/markdown_widget/markdown_widget.dart';
 import 'package:minitutorials/mask_any_image/mask_any_image.dart';
 import 'package:minitutorials/mask_text_with_image/mask_text_with_image.dart';
 import 'package:minitutorials/multi_language_app/multi_language_app.dart';
+import 'package:minitutorials/my_audioplayer/my_audioplayer.dart';
+import 'package:minitutorials/my_audiorecorder/my_audiorecorder.dart';
+import 'package:minitutorials/my_future/my_future.dart';
 import 'package:minitutorials/my_futurebuilder/my_futurebuilder.dart';
 import 'package:minitutorials/my_google_translate/my_google_translate.dart';
 import 'package:minitutorials/my_liquid_swipe/my_liquid_swipe.dart';
@@ -58,6 +64,7 @@ import 'package:minitutorials/my_media_query/my_media_query.dart';
 import 'package:minitutorials/my_neumorphism_button/my_neumorphism_button.dart';
 import 'package:minitutorials/my_preserve_scroll_position/my_preserve_scroll_position.dart';
 import 'package:minitutorials/my_single_child_scroll_view/my_single_child_scroll_view.dart';
+import 'package:minitutorials/my_streambuilder/my_streambuilder.dart';
 import 'package:minitutorials/my_webview/my_webview.dart';
 import 'package:minitutorials/my_youtube_player/my_youtube_player.dart';
 import 'package:minitutorials/native_splash_screen/native_splash_screen.dart';
@@ -87,6 +94,7 @@ import 'package:minitutorials/spacer_widget/spacer_widget.dart';
 import 'package:minitutorials/spread_operator/spread_operator.dart';
 import 'package:minitutorials/stepper_widget/stepper_widget.dart';
 import 'package:minitutorials/sticky_header_in_listview/sticky_header_in_listview.dart';
+import 'package:minitutorials/top7_appbar_widgets/top7_appbar_widgets.dart';
 import 'package:minitutorials/top_10_widgets/top_10_widgets.dart';
 import 'package:minitutorials/upload_to_firebase/upload_to_firebase.dart';
 import 'package:minitutorials/validate_forms/validate_forms.dart';
@@ -112,10 +120,59 @@ import 'unique_identifier_generator/unique_identifier_generator.dart';
 
 // https://stackoverflow.com/questions/68972127/fix-all-const-warning-flutter
 Future<void> main() async {
-  int myCase = -55;
+  int myCase = -66;
 
   Widget? myWidget;
   switch (myCase) {
+    case -73:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: GlobalKeys(),
+      );
+      break;
+    case -72:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: FirebaseCRUD(),
+      );
+      break;
+    case -71:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyAudioPlayer(),
+      );
+      break;
+    case -70:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Top7AppbarWidgets(),
+      );
+      break;
+    case -69:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyAudioRecorder(),
+      );
+      break;
+    case -68:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyFuture(),
+      );
+      break;
+    case -67:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyStreamBuilder(),
+      );
+      break;
+    case -66:
+      myWidget = const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ListViewJSON(),
+      );
+      break;
+
     case -65:
       myWidget = const MaterialApp(
         debugShowCheckedModeBanner: false,
