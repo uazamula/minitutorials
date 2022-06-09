@@ -8,7 +8,7 @@ class User {
     required this.email,
     required this.urlAvatar,
   });
-  static User fromJson(Map<String,dynamic> json)=> User(
+  static User fromJson(json)=> User(
     username: json['username'],
     email: json['email'],
     urlAvatar: json['urlAvatar'],

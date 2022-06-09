@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:minitutorials/listview_json/user.dart';
+
 // http: ^0.13.4
 class ListViewJSON extends StatefulWidget {
   const ListViewJSON({Key? key}) : super(key: key);
@@ -19,15 +23,23 @@ class _ListViewJSONState extends State<ListViewJSON> {
     'assets/images/alarm.png',
   ];
 
-  // Future<List<User>> usersFromNet = getUsersFromNet();
-  // static Future<List<User>> getUsersFromNet() async{
-  //   return Text('data');
-  //
-  // }
+  Future<List<User>> usersFromNet = getUsersFromNet();
+  static const url =
+      'https://github.com/uazamula/minitutorials/blob/master/assets/jsons/users_listview_json.json';
+  static Future<List<User>> getUsersFromNet() async {
 
+    final response = await get(Uri.parse(url));
+    if(response.statusCode!=200) {
+      print('==================Something went wrong');
+    }
+    else print("=========${response.body}");
+    final body = json.decode(response.body);
+    return body.map<User>(User.fromJson).toList();
+  }
 
-    List<User> users = getUsers();
+  List<User> users = getUsers();
 
+//https://github.com/uazamula/minitutorials/blob/master/assets/jsons/users_listview_json.json
   static List<User> getUsers() {
     final List<Map<String, dynamic>> data = List.generate(
         images.length,
@@ -73,6 +85,18 @@ class _ListViewJSONState extends State<ListViewJSON> {
           Center(
             child: buildUsers(users),
           ),
+          Center(
+              child: FutureBuilder<List<User>>(
+                  future: usersFromNet,
+                  builder: (context, snapshot)  {
+
+                      if (snapshot.hasData) {
+                        final users = snapshot.data!;
+                        return buildUsers(users);
+                      } else {
+                        return Text('No user data.');
+                      }
+                  })),
         ],
       ),
     );
@@ -80,20 +104,20 @@ class _ListViewJSONState extends State<ListViewJSON> {
 
   Widget buildUsers(List<User> users) {
     return ListView.builder(
-      itemCount: users.length, itemBuilder: (context, index) {
-        final user = users[index];
-        return Card(
-          child: ListTile(
-            leading: CircleAvatar(
-              radius: 28,
-              backgroundImage: AssetImage(user.urlAvatar),
+        itemCount: users.length,
+        itemBuilder: (context, index) {
+          final user = users[index];
+          return Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 28,
+                backgroundImage: AssetImage(user.urlAvatar),
+              ),
+              title: Text(user.username),
+              subtitle: Text(user.email),
+              trailing: Icon(Icons.arrow_forward),
             ),
-            title: Text(user.username),
-            subtitle: Text(user.email),
-            trailing: Icon(Icons.arrow_forward),
-          ),
-
-        );
-  });
+          );
+        });
   }
 }
