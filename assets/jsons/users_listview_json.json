@@ -1,11 +1,11 @@
 [
-  {
+p  {
     "username": "buddha",
     "email": "email1", 
     "urlAvatar": "assets/images/buddha.jpg"
   },
   {
-8"username": "brailka", 
+    "username": "brailka", 
     "email": "email2", 
     "urlAvatar": "assets/images/brailka.jpg"
   },
