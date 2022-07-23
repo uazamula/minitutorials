@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:minitutorials/listview_json/user.dart';
-//https://stackoverflow.com/questions/65630743/how-to-solve-flutter-web-api-cors-error-only-with-dart-code
+// https://stackoverflow.com/questions/65630743/how-to-solve-flutter-web-api-cors-error-only-with-dart-code
+// https://stackoverflow.com/questions/69466478/waiting-asynchronously-for-navigator-push-linter-warning-appears-use-build/69512692#69512692
 // http: ^0.13.4
 class ListViewJSONfromWeb extends StatefulWidget {
   const ListViewJSONfromWeb({Key? key}) : super(key: key);
@@ -18,7 +19,9 @@ class _ListViewJSONfromWebState extends State<ListViewJSONfromWeb> {
 
   static Future<List<User>> getUsers() async {
     const url =
-        'https://github.com/uazamula/minitutorials/blob/master/assets/jsons/users_listview_json.json';
+        // 'https://github.com/uazamula/minitutorials/blob/master/assets/jsons/users_listview_json.json';
+     'https://easyupload.io/ga4t3e';///users_listview_json.json';
+    // 'file:///Users/lenagrozav/StudioProjects/minitutorials/assets/jsons/users_listview_json.json';
     final response = await get(Uri.parse(url));
     final body = json.decode(response.body);
     return body.map<User>(User.fromJson).toList();
@@ -37,6 +40,7 @@ class _ListViewJSONfromWebState extends State<ListViewJSONfromWeb> {
                 if(snapshot.connectionState == ConnectionState.waiting){
                   return CircularProgressIndicator();
                 } else if (snapshot.hasError){
+                  print('${snapshot.error}');
                   return Text('${snapshot.error}');
                 }
                 else if (snapshot.hasData) {
